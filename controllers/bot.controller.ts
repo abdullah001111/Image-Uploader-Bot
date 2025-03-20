@@ -71,16 +71,6 @@ export const BotController = {
         await TelegramService.sendMessage(
           chatId, 
           imageUrl || "❌ Failed to upload image",
-          {
-            reply_markup: {
-              inline_keyboard: [
-                [{ 
-                  text: "Share Link 🔗", 
-                  url: `tg://msg_url?url=${encodeURIComponent(imageUrl)}`
-                }]
-              ]
-            }
-          }
         );
         return new Response("OK");
       }
