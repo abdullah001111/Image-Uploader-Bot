@@ -9,6 +9,15 @@ export interface Update {
     chat: Chat;
     text?: string;
     photo?: PhotoSize[];
+    document?: Document;
+  }
+  
+  export interface Document {
+    file_id: string;
+    file_unique_id: string;
+    file_name?: string;
+    mime_type?: string;
+    file_size?: number;
   }
   
   export interface User {

@@ -12,7 +12,7 @@ export const BotController = {
   async handleUpdate(update: any): Promise<Response> {
     if (!update.message) return new Response("OK");
 
-    const { chat, from, text, photo } = update.message;
+    const { chat, from, text, photo, document } = update.message;
     const chatId = chat.id;
     const userId = from.id;
 
@@ -20,12 +20,11 @@ export const BotController = {
       if (text === "/start") {
         if (USE_DB) await UserRepository.createUser(userId);
         
-        // Send welcome message with inline keyboard
         await TelegramService.sendPhoto(
           chatId,
           WELCOME_IMAGE_URL,
           `<b>🖍️ Welcome to Image Link Bot!</b>\n\n` +
-          `<i>Send me an image to get a shareable link</i>`,
+          `<i>Send me an image (as photo or file) to get a shareable link</i>`,
           {
             inline_keyboard: [
               [{ 
@@ -50,7 +49,8 @@ export const BotController = {
         return new Response("OK");
       }
 
-      if (photo) {
+      // Handle both photos and document-based images
+      if (photo || (document?.mime_type?.startsWith('image/'))) {
         const hasAccess = await SubscriptionService.checkSubscription(chatId);
         if (!hasAccess) {
           await TelegramService.sendMessage(
@@ -63,7 +63,13 @@ export const BotController = {
           return new Response("OK");
         }
 
-        const fileId = photo.pop().file_id;
+        let fileId: string;
+        if (photo) {
+          fileId = photo.pop().file_id;
+        } else {
+          fileId = document.file_id;
+        }
+
         const imageUrl = await ImageUploadService.uploadImage(
           await (await fetch(await TelegramService.getFileUrl(fileId))).arrayBuffer()
         );
@@ -71,13 +77,31 @@ export const BotController = {
         await TelegramService.sendMessage(
           chatId, 
           imageUrl || "❌ Failed to upload image",
+          {
+            reply_markup: imageUrl ? {
+              inline_keyboard: [
+                [{ 
+                  text: "Share Link 🔗", 
+                  url: `tg://msg_url?url=${encodeURIComponent(imageUrl)}`
+                }]
+              ]
+            } : undefined
+          }
+        );
+        return new Response("OK");
+      }
+
+      if (document) {
+        await TelegramService.sendMessage(
+          chatId,
+          "❌ Unsupported file type. Please send an image file (JPEG, PNG, etc.)"
         );
         return new Response("OK");
       }
 
       await TelegramService.sendMessage(
         chatId,
-        "📸 Send me an image to get started!\n\n" +
+        "📸 Send me an image (as photo or file) to get started!\n\n" +
         "✨ Features:\n" +
         "- Convert images to direct links\n" +
         "- Shareable links\n" +
