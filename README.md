@@ -20,7 +20,6 @@ Set these environment variables before deployment:
 | Variable    | Description                                                  | Required |
 | ----------- | ------------------------------------------------------------ | -------- |
 | `BOT_TOKEN` | Telegram Bot Token from [@BotFather](https://t.me/BotFather) | Yes      |
-| `CHANNEL_USERNAME` | Your channel username `Must make bot admin in` | Yes      |
 | `MONGO_URI` | MongoDB Connection URL (Optional)                            | No       |
 
 ---
@@ -53,8 +52,7 @@ Set these environment variables before deployment:
 ## 📋 Environment Setup
 
 1. Get `BOT_TOKEN` from [@BotFather](https://t.me/BotFather)
-2. Make bot admin in your channel in your @YourChannelUsername put `CHANNEL_USERNAME` in env.
-3. (Optional) Get MongoDB URI from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+2. (Optional) Get MongoDB URI from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
 ---
 
