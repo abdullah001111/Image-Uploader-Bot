@@ -5,7 +5,8 @@ import { SubscriptionService } from "../services/subscription.service.ts";
 import { 
   USE_DB, 
   WELCOME_IMAGE_URL, 
-  DEVELOPER_ID 
+  DEVELOPER_ID,
+  CLEAN_USERNAME
 } from "../config/config.ts";
 
 export const BotController = {
@@ -33,7 +34,7 @@ export const BotController = {
               }],
               [{
                 text: "Join Channel 📢",
-                url: "https://t.me/Private_Bots"
+                url: `https://t.me/${CLEAN_USERNAME}`
               }],
               [{ 
                 text: "Source Code ↗️", 
@@ -61,7 +62,7 @@ export const BotController = {
             chatId,
             `<b>🔒 Premium Feature</b>\n\n` +
             `Join our channel to unlock this feature!\n\n` +
-            `<a href="https://t.me/Private_Bots">👉 Click here to join</a>`,
+            `<a href="https://t.me/${CLEAN_USERNAME}">👉 Click here to join</a>`,
             { disable_web_page_preview: true }
           );
           return new Response("OK");
