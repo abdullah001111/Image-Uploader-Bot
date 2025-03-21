@@ -35,7 +35,7 @@ Set these environment variables before deployment:
 - Go to the project's `Settings` tab and add the Environment Variables from [.env.example](.env.example) file. You can skip adding the optional one.
 - Make any changes in your repo (_it can be any change like editing any file as adding " " (space) in a new line._) after adding Environment Variables as committing it.
 - Grab the <a href="#deployment-url">deployment URL</a> from the `Overview` tab and set the webhook (mentioned below).
-  - [How o set a webhook?](https://core.telegram.org/bots/api#setwebhook).
+  - [How to set a webhook?](https://core.telegram.org/bots/api#setwebhook).
     - It's simple, In this url `https://api.telegram.org/botBOT_TOKEN/setWebhook?url=DEPLOYMENT_URL` replace "BOT_TOKEN" with your bot's token and replace DEPLOYMENT_URL with <a href="#deployment-url">deno deployed (domain) url</a>, and open that edited url in your browser. Once you see "Webhook was set", Go to your bot, it must be running.
 
 ### Deployment Url
