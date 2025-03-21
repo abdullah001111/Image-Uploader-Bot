@@ -34,6 +34,7 @@ Set these environment variables before deployment:
   - <a href="https://dash.deno.com/new"><img src="https://img.shields.io/badge/Deployed%20on-Deno%20Deploy-blue?logo=deno" alt="Click this after forking"></img></a>
 - Seek into the _Deploy your own code_ section,
 - Create a project from your forked repo.
+- Select `main.ts` as Entrypoint and dont add anything else for now.
 - Go to the project's `Settings` tab and add the Environment Variables from [.env.example](.env.example) file. You can skip adding the optional one.
 - Make any changes in your repo (_it can be any change like editing any file as adding " " (space) in a new line._) after adding Environment Variables as committing it.
 - Grab the <a href="#deployment-url">deployment URL</a> from the `Overview` tab and set the webhook (mentioned below).
