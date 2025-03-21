@@ -34,7 +34,11 @@ export const BotController = {
               [{
                 text: "Join Channel 📢",
                 url: "https://t.me/Private_Bots"
-              }]
+              }],
+              [{ 
+                text: "Source Code ↗️", 
+                url: `https://github.com/Private-Bots-Official/Image-Uploader-Bot`
+              }],
             ]
           }
         );
@@ -83,7 +87,11 @@ export const BotController = {
                 [{ 
                   text: "Share Link 🔗", 
                   url: `tg://msg_url?url=${encodeURIComponent(imageUrl)}`
-                }]
+                }],
+                [{ 
+                  text: "Source Code ↗️", 
+                  url: `https://github.com/Private-Bots-Official/Image-Uploader-Bot`
+                }],
               ]
             } : undefined
           }
@@ -106,15 +114,6 @@ export const BotController = {
         "- Convert images to direct links\n" +
         "- Shareable links\n" +
         "- Premium channel access",
-        {
-          reply_markup: {
-            resize_keyboard: true,
-            keyboard: [
-              [{ text: "Join Channel 📢" }],
-              [{ text: "Contact Developer 👨💻" }]
-            ]
-          }
-        }
       );
     } catch (error) {
       console.error("Handler error:", error);
