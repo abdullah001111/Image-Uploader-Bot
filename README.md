@@ -27,6 +27,7 @@ Set these environment variables before deployment:
 
 ## 🚀 Deployment
 
+- Give a star to this repo 😁.
 - [Fork](/../../fork) this repo on GitHub.
 - Create an account to https://dash.deno.com.
 - After that click the image below:
@@ -68,7 +69,7 @@ Set these environment variables before deployment:
 
 ## 📞 Contact
 
-[![Developer](https://img.shields.io/badge/Developer-Contact-blue?logo=telegram)](tg://user?id=5190902724)  
+[![Developer](https://img.shields.io/badge/Developer-Contact-blue?logo=telegram)](https://t.me/Prime_Hritu)  
 [![Channel](https://img.shields.io/badge/Updates_Channel-Join-green?logo=telegram)](https://t.me/Private_Bots)
 
 <p align="center">
