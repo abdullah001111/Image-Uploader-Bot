@@ -11,7 +11,7 @@ if (MONGO_URI) {
     db = client.database("imageToLinkBot");
   } catch (error) {
     console.error("❌ MongoDB connection failed:", error);
-    Deno.exit(1);
+    throw error; 
   }
 }
 
