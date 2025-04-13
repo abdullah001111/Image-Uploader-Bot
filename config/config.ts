@@ -3,7 +3,7 @@ export const IMGBB_UPLOAD_URL = "https://api-integretion-unblocked.vercel.app/im
 export const SUBSCRIPTION_CHECK_BOT_TOKEN = BOT_TOKEN;
 export const CHANNEL_USERNAME = Deno.env.get("CHANNEL_USERNAME"); // example -> @Private_Bots
 export const DEVELOPER_ID = 5190902724;
-export const WELCOME_IMAGE_URL = "https://i.imghippo.com/files/GdN9496KmY.jpg";
+export const WELCOME_IMAGE_URL = "https://graph.org/file/b7edd263c20359dcbe991-38e4f0fece8d826ebe.jpg";
 
 // Validate required variables
 const requiredVars = ["BOT_TOKEN", "CHANNEL_USERNAME"];
