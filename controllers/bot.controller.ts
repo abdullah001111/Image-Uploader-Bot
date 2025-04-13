@@ -37,8 +37,8 @@ export const BotController = {
                 url: `https://t.me/${CLEAN_USERNAME}`
               }],
               [{ 
-                text: "Source Code ↗️", 
-                url: `https://github.com/Private-Bots-Official/Image-Uploader-Bot`
+                text: "Powered By 👾", 
+                url: `https://t.me/TeamMayhem`
               }],
             ]
           }
@@ -90,8 +90,8 @@ export const BotController = {
                   url: `tg://msg_url?url=${encodeURIComponent(imageUrl)}`
                 }],
                 [{ 
-                  text: "Source Code ↗️", 
-                  url: `https://github.com/Private-Bots-Official/Image-Uploader-Bot`
+                  text: "Powered By 👾", 
+                  url: `https://t.me/TeamMayhem`
                 }],
               ]
             } : undefined
